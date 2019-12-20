@@ -9,12 +9,12 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("/user")
+@RequestMapping("/statistcs")
 public class StatistcsController {
     @Autowired StatistcsService statistcsService;
 
     @RequestMapping(value = "/all", method = RequestMethod.GET)
-    public List<Statistcs> getAllUsers() {
+    public List<Statistcs> getAllStatistcs() {
         return statistcsService.getAllStatistcs();
     }
 
@@ -61,11 +61,11 @@ public class StatistcsController {
     @RequestMapping(value = "/addStatistic", method = RequestMethod.POST,
             consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
     @ResponseBody()
-    public Statistcs addNewUser(@RequestBody Statistcs statistcs) {
+    public Statistcs addNewStatistc(@RequestBody Statistcs statistcs) {
         return this.statistcsService.addStatistcs(statistcs);
     }
 
-    
+
 
 }
 
